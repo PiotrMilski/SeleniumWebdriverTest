@@ -1,4 +1,4 @@
 package pages;
 
-public class DoodlePage {
+public class DoodlePage extends Page {
 }

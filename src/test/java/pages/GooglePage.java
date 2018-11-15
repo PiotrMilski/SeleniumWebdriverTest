@@ -7,19 +7,14 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static core.SetUp.driver;
-import static core.SetUp.wait;
 
-public class GooglePage {
+public class GooglePage extends Page {
 
     @FindBy(id = "lst-ib")
     private WebElement searchInput;
 
     @FindBy(xpath = "//*[@aria-label='Szczęśliwy traf']")
     private WebElement luckyShotSubmit;
-
-    public GooglePage() {
-        PageFactory.initElements(driver, this);
-    }
 
     public void typeInSearchEngine(final String text) {
         searchInput.sendKeys(text);
@@ -38,4 +33,5 @@ public class GooglePage {
         wait.until(driver -> driver.getCurrentUrl().equals("https://www.google.com/doodles"));
         return new DoodlePage();
     }
+
 }

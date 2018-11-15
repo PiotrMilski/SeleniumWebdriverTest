@@ -16,15 +16,13 @@ import static dataproviders.AppUrl.GOOGLE_URL;
 public class SetUp {
 
     public static WebDriver driver;
-    public static WebDriverWait wait;
-    private final int SECONDS = 10;
 
 
     @BeforeSuite
     public void setUp() {
         //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, SECONDS);
+        //wait = new WebDriverWait(driver, SECONDS);
         //driver.manage().window().maximize();
     }
 
